@@ -10,10 +10,10 @@ const AddUser = () => {
     const name = form.name.value;
     const email = form.email.value;
     const job = form.job.value;
-    const newUser = { name, email, job };
+    const newUser = { name, email, job, isPaid: false };
 
     // send data to server
-    fetch("https://user-management-system-server-nine.vercel.app/users", {
+    fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

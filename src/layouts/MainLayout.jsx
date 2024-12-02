@@ -6,7 +6,7 @@ const MainLayout = () => {
     <div className="text-center font-light font-mono">
       <Header />
 
-      <div className="my-10">
+      <div className="my-4">
         <Outlet />
       </div>
     </div>

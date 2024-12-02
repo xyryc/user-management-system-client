@@ -16,16 +16,13 @@ const UpdateUser = () => {
     const updatedUser = { name, email, job };
 
     // send data to server api
-    fetch(
-      `https://user-management-system-server-nine.vercel.app/users/${loadedData?._id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updatedUser),
-      }
-    )
+    fetch(`http://localhost:5000/users/${loadedData?._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedUser),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

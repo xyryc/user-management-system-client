@@ -12,8 +12,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <AllData />,
-        loader: () =>
-          fetch("https://user-management-system-server-nine.vercel.app/users"),
+        loader: () => fetch("http://localhost:5000/users"),
       },
       {
         path: "/adduser",
@@ -23,9 +22,7 @@ const router = createBrowserRouter([
         path: "/updateuser/:id",
         element: <UpdateUser />,
         loader: ({ params }) =>
-          fetch(
-            `https://user-management-system-server-nine.vercel.app/users/${params.id}`
-          ),
+          fetch(`http://localhost:5000/users/${params.id}`),
       },
     ],
   },

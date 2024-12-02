@@ -2,7 +2,7 @@
 
 Site: [Live Demo](https://user-management-system-ums.surge.sh)
 
-Server: [Live Server](https://user-management-system-server-nine.vercel.app/)
+Server: [Live Server](http://localhost:5000/)
 
 ## Repo
 
