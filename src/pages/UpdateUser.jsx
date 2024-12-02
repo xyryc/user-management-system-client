@@ -1,8 +1,10 @@
 import { MdKeyboardBackspace } from "react-icons/md";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateUser = () => {
   const loadedData = useLoaderData();
+  const navigate = useNavigate();
 
   const handleUpdateUser = (event) => {
     event.preventDefault();
@@ -27,6 +29,16 @@ const UpdateUser = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Data has been updated",
+            icon: "success",
+          });
+
+          navigate("/");
+        }
       });
   };
 
