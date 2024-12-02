@@ -22,9 +22,12 @@ const AllData = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // send req to server
-        fetch(`http://localhost:5000/users/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://user-management-system-server-nine.vercel.app/users/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

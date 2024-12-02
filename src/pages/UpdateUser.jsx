@@ -14,13 +14,16 @@ const UpdateUser = () => {
     const updatedUser = { name, email, job };
 
     // send data to server api
-    fetch(`http://localhost:5000/users/${loadedData?._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updatedUser),
-    })
+    fetch(
+      `https://user-management-system-server-nine.vercel.app/users/${loadedData?._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedUser),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -31,7 +34,7 @@ const UpdateUser = () => {
     <div>
       <p className="text-left">
         <Link to={"/"} className="btn btn-link text-secondary">
-        <MdKeyboardBackspace/> Back to All Users
+          <MdKeyboardBackspace /> Back to All Users
         </Link>
       </p>
 

@@ -13,7 +13,7 @@ const AddUser = () => {
     const newUser = { name, email, job };
 
     // send data to server
-    fetch("http://localhost:5000/users", {
+    fetch("https://user-management-system-server-nine.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,7 +39,7 @@ const AddUser = () => {
     <div>
       <p className="text-left">
         <Link to={"/"} className="btn btn-link text-secondary">
-          <MdKeyboardBackspace/>  Back to All Users
+          <MdKeyboardBackspace /> Back to All Users
         </Link>
       </p>
 
